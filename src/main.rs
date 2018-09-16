@@ -6,7 +6,7 @@ fn main() {
 
     match input.trim() {
         "PUSHINT" => println!("you typed PUSHINT!"),
-        _ => println!("LOL"),
+        _ => println!("you typed something else!"),
     }
 }
 
