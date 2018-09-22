@@ -1,12 +1,29 @@
  pub struct Stack {
-    pub _stack: Vec<i32>,
+    _stack: Vec<i32>,
 }
 
 
 impl Stack {
+
+    pub fn new() -> Stack {
+        Stack {
+            _stack: Vec::<i32>::new(),
+        }
+    }
+
     pub fn push(&mut self, input:&str)
     {
-        let foo = input.parse::<i32>().unwrap();
-        self._stack.push( foo );
+        let value= input.parse::<i32>().unwrap();
+        self._stack.insert(0,value);
+    }
+
+    pub fn peek_print(&mut self)
+    {
+        if self._stack.len() == 0 {
+            println!("Stack is Empty!");
+            return;
+        }
+
+        println!("value on top of the stack is: {}", self._stack[0]);
     }
 }
