@@ -6,7 +6,7 @@
 impl Stack {
     pub fn push(&mut self, input:&str)
     {
-        let foo= input.parse::<i32>().unwrap();
+        let foo = input.parse::<i32>().unwrap();
         self._stack.push( foo );
     }
 }
