@@ -2,7 +2,6 @@
     _stack: Vec<i32>,
 }
 
-
 impl Stack {
 
     pub fn new() -> Stack {
@@ -11,11 +10,20 @@ impl Stack {
         }
     }
 
-    pub fn push(&mut self, input:&str)
+    pub fn push(&mut self, value: i32)
     {
-        let value= input.parse::<i32>().unwrap();
         self._stack.insert(0,value);
     }
+
+    pub fn pop(&mut self) -> Result<i32, &str>
+    {
+        match self._stack.len() {
+            0 => Err("Empty Stack, cant ADD!"),
+            _ => Ok(self._stack.remove(0))
+        }
+    }
+
+    pub fn len(&mut self) -> usize { self._stack.len() }
 
     pub fn peek_print(&mut self)
     {
